@@ -30,7 +30,19 @@ fun LoadContactsData(navController: NavController, viewModel: ContactViewModel =
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
         }
-    } else if (result.data != null) {
+    }
+    if(result.error.isNotEmpty()){
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text(
+                text = result.error, style = TextStyle(
+                    color = Color.Black,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+            )
+        }
+    }
+    if (result.data != null) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomEnd) {
             result.data?.let {
                 LazyColumn(modifier = Modifier

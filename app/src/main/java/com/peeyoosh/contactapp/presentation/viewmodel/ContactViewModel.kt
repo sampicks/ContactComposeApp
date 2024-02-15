@@ -1,16 +1,12 @@
 package com.peeyoosh.contactapp.presentation.viewmodel
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.peeyoosh.contactapp.presentation.stateholder.ContactStateHolder
 import com.peeyoosh.core.common.NetworkResult
-import com.peeyoosh.core.domain.model.ContactDomainModel
 import com.peeyoosh.core.domain.usecase.ContactListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
